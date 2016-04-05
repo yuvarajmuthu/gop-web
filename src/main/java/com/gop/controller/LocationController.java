@@ -60,6 +60,17 @@ public class LocationController {
 		return array.toString();
 	}
 	
+	@RequestMapping(value="/getShape", method=RequestMethod.GET)
+	public String getShapeUsingCoordinates(@RequestParam(value="directions", required=false, defaultValue="34.539,-81.020") String directions
+			,@RequestParam(value="type", required=false, defaultValue="shape") String shape){
+		if(shape.matches("centroid|simple_shape|shape")){
+			String url = properties.getLocation_url()+shape+"?contains="+directions;
+			ResponseEntity<String> entity = restTemplate.getForEntity(url, String.class);
+			return entity.getBody();
+		}
+		return null;
+	}
+	
 	private JsonObject getResponseFromRest(String url){
 		ResponseEntity<String> entity = restTemplate.getForEntity(url, String.class);
 		String body = entity.getBody();

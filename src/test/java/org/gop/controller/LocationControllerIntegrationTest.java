@@ -1,6 +1,7 @@
 package org.gop.controller;
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 import java.net.URL;
@@ -47,5 +48,11 @@ public class LocationControllerIntegrationTest {
 	public void testGetLatAndLongUsingDistrictName(){
 		ResponseEntity<String> response = template.getForEntity(base.toString().concat("/getLatAndLong"), String.class);
 		assertThat(response.getBody(), equalTo("[-81.0195321341162,34.53854793419508]"));
+	}
+	
+	@Test
+	public void testGetShape(){
+		ResponseEntity<String> response = template.getForEntity(base.toString().concat("/getShape"), String.class);
+		assertNotNull(response.getBody());
 	}
 }
