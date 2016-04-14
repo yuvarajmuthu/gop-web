@@ -113,6 +113,7 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-neo4j</artifactId>
+            <version>${sdn.version}</version>
         </dependency>
 
         <dependency>
