@@ -194,7 +194,12 @@
             <version>${sdn.version}</version>
             <type>test-jar</type>
         </dependency>
-
+		<dependency>
+   			 <groupId>de.grundid.opendatalab</groupId>
+    		<artifactId>geojson-jackson</artifactId>
+    		<version>1.5.1</version>
+		</dependency>
+		
 
         <!-- Others -->
         <dependency>
