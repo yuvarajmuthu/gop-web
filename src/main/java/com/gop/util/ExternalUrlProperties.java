@@ -8,6 +8,17 @@ public class ExternalUrlProperties {
 
 	@NotBlank
 	private String location_url;
+	
+	@NotBlank
+	private String sunlight_url;
+	
+	public String getSunlight_url() {
+		return sunlight_url;
+	}
+
+	public void setSunlight_url(String sunlight_url) {
+		this.sunlight_url = sunlight_url;
+	}
 
 	public String getLocation_url() {
 		return location_url;
