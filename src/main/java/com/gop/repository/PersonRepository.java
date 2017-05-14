@@ -11,4 +11,6 @@ public interface PersonRepository extends GraphRepository<Person> {
 	
 	@Query("MATCH (person:Person) WHERE person.firstName={0} RETURN person")
 	public List<Person> findPersonByName(String firstName);
+	
+	public List<Person> findPersonByFirstName(String firstName);
 }

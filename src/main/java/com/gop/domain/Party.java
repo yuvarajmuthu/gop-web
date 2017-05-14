@@ -4,14 +4,11 @@ import java.util.Date;
 
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
-import org.neo4j.ogm.annotation.typeconversion.DateLong;
-import org.neo4j.ogm.annotation.typeconversion.DateString;
 
 @NodeEntity
 public class Party {
 	@GraphId
     Long nodeId;
-		
 	String partyName;
 	//@DateString("yy-MM-dd")
 	Date establishedDate;

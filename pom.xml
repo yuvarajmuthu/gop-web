@@ -211,6 +211,28 @@
             <artifactId>logback-core</artifactId>
             <version>1.1.5</version>
         </dependency>
+        <!-- GeoServer Manager to access GeoServer Rest API -->
+        <dependency>
+		    <groupId>it.geosolutions</groupId>
+		    <artifactId>geoserver-manager</artifactId>
+		    <version>1.7.0</version>
+  		</dependency>
+        <!-- Apache Lucene -->
+        <dependency>
+        	<groupId>org.apache.lucene</groupId>
+        	<artifactId>lucene-core</artifactId>
+        	<version>4.7.2</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.apache.lucene</groupId>
+        	<artifactId>lucene-analyzers-common</artifactId>
+        	<version>4.7.2</version>
+        </dependency>
+        <dependency>
+        	<groupId>org.apache.lucene</groupId>
+        	<artifactId>lucene-queryparser</artifactId>
+        	<version>4.7.2</version>
+        </dependency>
     </dependencies>
 
 
@@ -228,6 +250,10 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <repository>
+		    <id>GeoSolutions</id>
+		    <url>http://maven.geo-solutions.it/</url>
+   		</repository>
 
     </repositories>
 

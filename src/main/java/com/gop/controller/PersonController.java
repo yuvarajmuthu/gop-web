@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.JsonArray;
 import com.gop.services.PersonServiceImpl;
 
 @Controller
@@ -48,6 +49,21 @@ public class PersonController
 			System.out.println("Error in getPerson controller:"+e.getMessage());
 		}
 		return jsonPersonReturn;
+	}
+	
+	@RequestMapping(value="/getLucenePerson/{searchKey}", method=RequestMethod.GET)
+	public @ResponseBody JsonArray getLucenePerson(@PathVariable String searchKey)
+	{
+		JsonArray jsonArray = null;
+		try
+		{
+			 jsonArray = personServiceImpl.getPersons(searchKey);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Error in getPerson controller:"+e.getMessage());
+		}
+		return jsonArray;
 	}
 
 }
