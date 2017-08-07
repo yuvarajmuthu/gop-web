@@ -72,7 +72,12 @@ public class LocationController {
 	}
 	
 	private JsonObject getResponseFromRest(String url){
-		ResponseEntity<String> entity = restTemplate.getForEntity(url, String.class);
+		ResponseEntity<String> entity = null;
+		try{
+			entity = restTemplate.getForEntity(url, String.class);
+		}catch(Exception e){
+			logger.error(e.getMessage());
+		}
 		String body = entity.getBody();
 		JsonObject jsonObject = new JsonObject();
 		try {
